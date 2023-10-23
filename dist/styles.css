@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --LightGrey: hsl(217, 12%, 63%);
+  --MediumGrey: hsl(216, 12%, 54%);
+  --DarkBlue: hsl(213, 19%, 18%);
+  --VeryDarkBlue: hsl(216, 12%, 8%);
+  --orange: #fc7614;
+  --font: "Overpass", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--VeryDarkBlue);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+}
+
+.btn {
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-family: var(--font);
+  border-radius: 50px;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.bg-primary {
+  background-color: var(--DarkBlue) !important;
+}
+
+.btn-primary {
+  background-color: var(--orange);
+  border: none;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: var(--orange);
+}
+
+.text-secondary {
+  color: var(--MediumGrey) !important;
+}
+
+.error-message {
+  background-color: var(--orange);
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+& .card {
+  width: 360px;
+  background-color: var(--DarkBlue);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  & .star {
+    background-color: var(--VeryDarkBlue);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  & h1 {
+    color: #fff;
+  }
+
+  & p {
+    color: var(--LightGrey);
+    font-size: 1.2rem;
+  }
+  & .ratings {
+    display: flex;
+    justify-content: space-between;
+    & .rating {
+      width: 50px;
+      height: 50px;
+      background-color: hsl(216, 12%, 54%, 0.1);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    & .active {
+      background-color: var(--LightGrey);
+    }
+
+    & .rating:hover {
+      background-color: var(--orange);
+      opacity: 100%;
+    }
+  }
+}
+
+.init {
+  /* display: none; */
+}
+
+.thanks {
+  display: none;
+  .illustration {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .message-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.6rem 0;
+
+    & .message {
+      font-size: 1rem;
+      color: var(--orange);
+      width: 60%;
+      padding: 0.5rem;
+      text-align: center;
+      border-radius: 20px;
+      background-color: hsl(216, 12%, 54%, 0.1);
+    }
+  }
+
+  & .text-light {
+    color: #fff;
+    text-align: center;
+  }
+
+  & .text-secondary {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (width > 767px) {
+  .btn {
+    padding: 1.2rem;
+  }
+  & .card {
+    width: 450px;
+
+    & .ratings {
+      & .rating {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
